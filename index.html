@@ -24,6 +24,7 @@
       font-size: 24px;
       margin-bottom: 20px;
       font-weight: bold;
+      white-space: nowrap;
     }
 
     .description {
@@ -34,7 +35,7 @@
       opacity: 0;
       transition: opacity 1s ease-in-out;
       animation: fadeIn 1s ease-in-out;
-      animation-delay: 2s;
+      animation-delay: 1s;
       animation-fill-mode: forwards;
     }
 
@@ -53,7 +54,7 @@
 </head>
 <body>
   <h1 class="typing-container">
-    <span style="font-weight: bold">Call me </span>Isaaq
+    <span style="font-weight: bold; white-space: nowrap;">Call me Isaaq</span>
   </h1>
 
   <div class="description">
@@ -132,7 +133,7 @@
             }, 2000);
           }, paragraph2Text.length * 50);
         }, paragraph1Text.length * 50);
-      }, headingText.length * 50);
+      }, 0);
     }, 0);
   </script>
 </body>
