@@ -54,7 +54,10 @@
 
   <div class="description">
     <div class="text-container">
-      <p id="paragraph-text"></p>
+      <p id="paragraph1-text"></p>
+      <p id="paragraph2-text"></p>
+      <p id="paragraph3-text"></p>
+      <p id="paragraph4-text"></p>
     </div>
   </div>
 
@@ -78,21 +81,29 @@
   <!-- End Viral Loops Waiting List Email Collection -->
 
   <script>
-    const paragraphTextElement = document.getElementById('paragraph-text');
-    const paragraphText = `Isaaq is a platform that helps you create a personalized digital autobiography through context-aware questions, powered by AI. Connect with your loved ones and future generations by sharing your unique story.
+    const paragraph1TextElement = document.getElementById('paragraph1-text');
+    const paragraph1Text = `Isaaq is an AI biographer that helps you create a personalized digital autobiography, allowing you to share the true story of you with your loved ones.`;
+    let paragraph1Index = 0;
 
-    At Isaaq, we believe that every person has a story worth sharing, a legacy that deserves to be preserved and cherished. Our mission is to empower you to capture and immortalize your life's journey through a personalized digital autobiography.
+    const paragraph2TextElement = document.getElementById('paragraph2-text');
+    const paragraph2Text = `At Isaaq, we believe that every person's life journey is unique and worth preserving. Our platform leverages AI technology to guide you through the process of creating a meaningful digital autobiography.`;
+    let paragraph2Index = 0;
 
-    With Isaaq's AI-driven platform, we guide you on a transformative storytelling experience. Our context-aware questions delve deep into your memories, eliciting profound insights and capturing the essence of your experiences.
+    const paragraph3TextElement = document.getElementById('paragraph3-text');
+    const paragraph3Text = `By answering context-aware questions, you'll uncover deep insights, significant memories, and valuable experiences that shape who you are.`;
+    let paragraph3Index = 0;
 
-    By creating a digital autobiography, you unlock the power to connect with your loved ones, sharing the wisdom, laughter, and lessons learned along the way. Your unique story becomes a beacon of inspiration, weaving together generations and forging lasting bonds.`;
-    let paragraphIndex = 0;
+    const paragraph4TextElement = document.getElementById('paragraph4-text');
+    const paragraph4Text = `Share your digital autobiography with your loved ones and future generations, fostering deeper connections and leaving a lasting legacy.`;
+    let paragraph4Index = 0;
 
-    function typeOutText() {
-      if (paragraphIndex < paragraphText.length) {
-        paragraphTextElement.textContent += paragraphText[paragraphIndex];
-        paragraphIndex++;
-        setTimeout(typeOutText, 50);
+    function typeOutText(textElement, text, index) {
+      if (index < text.length) {
+        textElement.textContent += text[index];
+        index++;
+        setTimeout(() => {
+          typeOutText(textElement, text, index);
+        }, 50);
       }
     }
 
@@ -102,8 +113,17 @@
     }
 
     setTimeout(() => {
-      typeOutText();
-      fadeInDescription();
+      typeOutText(paragraph1TextElement, paragraph1Text, paragraph1Index);
+      setTimeout(() => {
+        typeOutText(paragraph2TextElement, paragraph2Text, paragraph2Index);
+        setTimeout(() => {
+          typeOutText(paragraph3TextElement, paragraph3Text, paragraph3Index);
+          setTimeout(() => {
+            typeOutText(paragraph4TextElement, paragraph4Text, paragraph4Index);
+            fadeInDescription();
+          }, 2000);
+        }, paragraph2Text.length * 50);
+      }, paragraph1Text.length * 50);
     }, 1000);
   </script>
 </body>
