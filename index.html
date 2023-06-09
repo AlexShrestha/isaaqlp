@@ -88,13 +88,11 @@
     By creating a digital autobiography, you unlock the power to connect with your loved ones, sharing the wisdom, laughter, and lessons learned along the way. Your unique story becomes a beacon of inspiration, weaving together generations and forging lasting bonds.`;
     let paragraphIndex = 0;
 
-    function typeOutText(textElement, text, index) {
-      if (index < text.length) {
-        textElement.textContent += text[index];
-        index++;
-        setTimeout(() => {
-          typeOutText(textElement, text, index);
-        }, 50);
+    function typeOutText() {
+      if (paragraphIndex < paragraphText.length) {
+        paragraphTextElement.textContent += paragraphText[paragraphIndex];
+        paragraphIndex++;
+        setTimeout(typeOutText, 50);
       }
     }
 
@@ -103,12 +101,10 @@
       descriptionElement.style.opacity = '1';
     }
 
-    function startTyping() {
-      typeOutText(paragraphTextElement, paragraphText, 0);
+    setTimeout(() => {
+      typeOutText();
       fadeInDescription();
-    }
-
-    setTimeout(startTyping, 0);
+    }, 1000);
   </script>
 </body>
 </html>
