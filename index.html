@@ -22,6 +22,7 @@
     .typing-container {
       font-size: 24px;
       margin-bottom: 20px;
+      text-align: center;
     }
 
     .description {
@@ -55,9 +56,11 @@
   </style>
 </head>
 <body>
-  <h1 class="typing-container">
-    Call me <span style="font-weight: bold;">Isaaq</span>
-  </h1>
+  <div class="typing-container">
+    <h1>
+      Call me <span style="font-weight: bold;">Isaaq</span>
+    </h1>
+  </div>
 
   <div class="description">
     <div class="text-container">
@@ -88,7 +91,7 @@
   <!-- End Viral Loops Waiting List Email Collection -->
 
   <script>
-    const headingTextElement = document.querySelector('.typing-container');
+    const headingTextElement = document.querySelector('.typing-container h1');
     const headingText = "Call me Isaaq";
     let headingIndex = 0;
 
