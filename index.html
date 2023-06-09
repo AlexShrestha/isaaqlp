@@ -36,8 +36,6 @@
       top: 0;
       display: inline-block;
       text-align: left;
-      white-space: pre-wrap;
-      break-inside: avoid;
     }
 
     @keyframes fadeIn {
@@ -46,8 +44,6 @@
       }
     }
   </style>
-  <!-- Viral Loops Loader -->
-  <script type="text/javascript" src="https://app.viral-loops.com/widgetsV2/core/loader.js"></script>
 </head>
 <body>
   <div style="text-align: center;">
@@ -67,9 +63,8 @@
     </div>
   </div>
 
-  <!-- Viral Loops Popup Form -->
-  <form-widget mode="popup" ucid="S2E75XrONVmKbLs82Wb5szIdcRs"></form-widget>
-
+  <!-- Viral Loops Waiting List Email Collection -->
+  <script type="text/javascript" src="https://app.viral-loops.com/widgetsV2/core/loader.js"></script>
   <script>
     (function(w, d, s, o, f, js, fjs) {
       w[o] = w[o] || function() { (w[o].q = w[o].q || []).push(arguments); };
@@ -84,10 +79,35 @@
       api_key: 'jjqkDXlEwT8bdreDNRmUIFeNID8',
       campaign_uuid: 'S2E75XrONVmKbLs82Wb5szIdcRs'
     };
+  </script>
+  <!-- End Viral Loops Waiting List Email Collection -->
 
-    setTimeout(() => {
+  <script>
+    const textBlockElement = document.getElementById('text-block');
+    const text = `Isaaq is an AI biographer that helps you create a personalized digital autobiography, allowing you to share the true story of you with your loved ones.<br><br>
+        At Isaaq, we believe that every person's life journey is unique and worth preserving. Our platform leverages AI technology to guide you through the process of creating a meaningful digital autobiography.<br><br>
+        By answering context-aware questions, you'll uncover deep insights, significant memories, and valuable experiences that shape who you are.<br><br>
+        Share your digital autobiography with your loved ones and future generations, fostering deeper connections and leaving a lasting legacy.`;
+    let textIndex = 0;
+
+    function typeOutText(textElement, text, index) {
+      if (index < text.length) {
+        textElement.innerHTML += text[index];
+        index++;
+        setTimeout(() => {
+          typeOutText(textElement, text, index);
+        }, 50);
+      }
+    }
+
+    function fadeInDescription() {
       const descriptionElement = document.querySelector('.description');
       descriptionElement.style.opacity = '1';
+    }
+
+    setTimeout(() => {
+      typeOutText(textBlockElement, text, textIndex);
+      fadeInDescription();
     }, 1000);
   </script>
 </body>
