@@ -36,6 +36,8 @@
       top: 0;
       display: inline-block;
       text-align: left;
+      white-space: pre-wrap;
+      break-inside: avoid;
     }
 
     @keyframes fadeIn {
@@ -54,10 +56,12 @@
 
   <div class="description">
     <div class="text-container">
-      <p id="paragraph1-text"></p>
-      <p id="paragraph2-text"></p>
-      <p id="paragraph3-text"></p>
-      <p id="paragraph4-text"></p>
+      <p id="text-block">
+        Isaaq is an AI biographer that helps you create a personalized digital autobiography, allowing you to share the true story of you with your loved ones.<br><br>
+        At Isaaq, we believe that every person's life journey is unique and worth preserving. Our platform leverages AI technology to guide you through the process of creating a meaningful digital autobiography.<br><br>
+        By answering context-aware questions, you'll uncover deep insights, significant memories, and valuable experiences that shape who you are.<br><br>
+        Share your digital autobiography with your loved ones and future generations, fostering deeper connections and leaving a lasting legacy.
+      </p>
     </div>
   </div>
 
@@ -78,61 +82,11 @@
       campaign_uuid: 'S2E75XrONVmKbLs82Wb5szIdcRs'
     };
 
-    // Viral Loops Widget Configuration
-    window.vrlpsInitWidget = function() {
-      window.VRLPS.init('popup', {
-        apiKey: window.vrlps.api_key,
-        campaignUuid: window.vrlps.campaign_uuid
-      });
-    };
-  </script>
-  <!-- End Viral Loops Waiting List Email Collection -->
-
-  <script>
-    const paragraph1TextElement = document.getElementById('paragraph1-text');
-    const paragraph1Text = `Isaaq is an AI biographer that helps you create a personalized digital autobiography, allowing you to share the true story of you with your loved ones.`;
-    let paragraph1Index = 0;
-
-    const paragraph2TextElement = document.getElementById('paragraph2-text');
-    const paragraph2Text = `At Isaaq, we believe that every person's life journey is unique and worth preserving. Our platform leverages AI technology to guide you through the process of creating a meaningful digital autobiography.`;
-    let paragraph2Index = 0;
-
-    const paragraph3TextElement = document.getElementById('paragraph3-text');
-    const paragraph3Text = `By answering context-aware questions, you'll uncover deep insights, significant memories, and valuable experiences that shape who you are.`;
-    let paragraph3Index = 0;
-
-    const paragraph4TextElement = document.getElementById('paragraph4-text');
-    const paragraph4Text = `Share your digital autobiography with your loved ones and future generations, fostering deeper connections and leaving a lasting legacy.`;
-    let paragraph4Index = 0;
-
-    function typeOutText(textElement, text, index) {
-      if (index < text.length) {
-        textElement.textContent += text[index];
-        index++;
-        setTimeout(() => {
-          typeOutText(textElement, text, index);
-        }, 50);
-      }
-    }
-
-    function fadeInDescription() {
+    setTimeout(() => {
       const descriptionElement = document.querySelector('.description');
       descriptionElement.style.opacity = '1';
-    }
-
-    setTimeout(() => {
-      typeOutText(paragraph1TextElement, paragraph1Text, paragraph1Index);
-      setTimeout(() => {
-        typeOutText(paragraph2TextElement, paragraph2Text, paragraph2Index);
-        setTimeout(() => {
-          typeOutText(paragraph3TextElement, paragraph3Text, paragraph3Index);
-          setTimeout(() => {
-            typeOutText(paragraph4TextElement, paragraph4Text, paragraph4Index);
-            fadeInDescription();
-          }, 2000);
-        }, paragraph3Text.length * 50);
-      }, paragraph2Text.length * 50);
     }, 1000);
   </script>
+  <!-- End Viral Loops Waiting List Email Collection -->
 </body>
 </html>
