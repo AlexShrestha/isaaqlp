@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta charset="UTF-8">
   <title>Call me Isaaq</title>
   <style>
@@ -17,6 +18,9 @@
       justify-content: center;
       height: 100vh;
       text-align: center;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
     }
 
     .typing-container {
@@ -61,7 +65,10 @@
     <p id="paragraph2-text"></p>
     <p id="paragraph3-text"></p>
     <p id="paragraph4-text"></p>
+    <!-- Viral Loops Waiting List Signup Buttons -->
+    <form-widget mode="popup" ucid="S2E75XrONVmKbLs82Wb5szIdcRs"></form-widget>
   </div>
+  
 
   <!-- Viral Loops Waiting List Email Collection -->
   <script type="text/javascript" src="https://app.viral-loops.com/widgetsV2/core/loader.js"></script>
@@ -104,14 +111,14 @@
     let paragraph4Index = 0;
 
     function typeOutText(textElement, text, index) {
-      if (index < text.length) {
-        textElement.textContent += text[index];
-        index++;
-        setTimeout(() => {
-          typeOutText(textElement, text, index);
-        }, 50);
-      }
-    }
+  if (index < text.length) {
+    setTimeout(() => {
+      textElement.textContent += text[index];
+      index++;
+      typeOutText(textElement, text, index);
+    }, Math.random() * 100 + 50); // Randomize the typing speed
+  }
+}
 
     function fadeInDescription() {
       const descriptionElement = document.querySelector('.description');
