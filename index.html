@@ -61,21 +61,48 @@
     </div>
   </div>
 
+  <!-- Viral Loops Waiting List Email Collection -->
+  <script type="text/javascript" src="https://app.viral-loops.com/widgetsV2/core/loader.js"></script>
+  <script>
+    (function(w, d, s, o, f, js, fjs) {
+      w[o] = w[o] || function() { (w[o].q = w[o].q || []).push(arguments); };
+      js = d.createElement(s), fjs = d.getElementsByTagName(s)[0];
+      js.id = o;
+      js.src = f;
+      js.async = 1;
+      fjs.parentNode.insertBefore(js, fjs);
+    })(window, document, 'script', 'vrlps-chrome-jssdk', 'https://app.viral-loops.com/widgetsV2/chrome/vrlps-chrome.js');
+
+    window.vrlps = {
+      api_key: 'jjqkDXlEwT8bdreDNRmUIFeNID8',
+      campaign_uuid: 'S2E75XrONVmKbLs82Wb5szIdcRs'
+    };
+
+    // Viral Loops Widget Configuration
+    window.vrlpsInitWidget = function() {
+      window.VRLPS.init('popup', {
+        apiKey: window.vrlps.api_key,
+        campaignUuid: window.vrlps.campaign_uuid
+      });
+    };
+  </script>
+  <!-- End Viral Loops Waiting List Email Collection -->
+
   <script>
     const paragraph1TextElement = document.getElementById('paragraph1-text');
-    const paragraph1Text = `Isaaq is an AI biographer that helps you create a personalized digital autobiography that you can share with your loved ones to discover the true story of you.`;
+    const paragraph1Text = `Isaaq is an AI biographer that helps you create a personalized digital autobiography, allowing you to share the true story of you with your loved ones.`;
     let paragraph1Index = 0;
 
     const paragraph2TextElement = document.getElementById('paragraph2-text');
-    const paragraph2Text = `At Isaaq, we believe that every person has a story worth sharing, a legacy that deserves to be preserved and cherished. Our mission is to empower you to capture and immortalize your life's journey through a personalized digital autobiography.`;
+    const paragraph2Text = `At Isaaq, we believe that every person's life journey is unique and worth preserving. Our platform leverages AI technology to guide you through the process of creating a meaningful digital autobiography.`;
     let paragraph2Index = 0;
 
     const paragraph3TextElement = document.getElementById('paragraph3-text');
-    const paragraph3Text = `With Isaaq's AI-driven platform, we guide you on a transformative storytelling experience. Our context-aware questions delve deep into your memories, eliciting profound insights and capturing the essence of your experiences.`;
+    const paragraph3Text = `By answering context-aware questions, you'll uncover deep insights, significant memories, and valuable experiences that shape who you are.`;
     let paragraph3Index = 0;
 
     const paragraph4TextElement = document.getElementById('paragraph4-text');
-    const paragraph4Text = `By creating a digital autobiography, you unlock the power to connect with your loved ones, sharing the wisdom, laughter, and lessons learned along the way. Your unique story becomes a beacon of inspiration, weaving together generations and forging lasting bonds.`;
+    const paragraph4Text = `Share your digital autobiography with your loved ones and future generations, fostering deeper connections and leaving a lasting legacy.`;
     let paragraph4Index = 0;
 
     function typeOutText(textElement, text, index) {
@@ -107,23 +134,5 @@
       }, paragraph2Text.length * 50);
     }, 1000);
   </script>
-  <!-- Viral Loops Waiting List Email Collection -->
-  <script type="text/javascript" src="https://app.viral-loops.com/widgetsV2/core/loader.js"></script>
-  <script>
-    (function(w, d, s, o, f, js, fjs) {
-      w[o] = w[o] || function() { (w[o].q = w[o].q || []).push(arguments); };
-      js = d.createElement(s), fjs = d.getElementsByTagName(s)[0];
-      js.id = o;
-      js.src = f;
-      js.async = 1;
-      fjs.parentNode.insertBefore(js, fjs);
-    })(window, document, 'script', 'vrlps-chrome-jssdk', 'https://app.viral-loops.com/widgetsV2/chrome/vrlps-chrome.js');
-
-    window.vrlps = {
-      api_key: 'jjqkDXlEwT8bdreDNRmUIFeNID8',
-      campaign_uuid: 'S2E75XrONVmKbLs82Wb5szIdcRs'
-    };
-  </script>
-  <!-- End Viral Loops Waiting List Email Collection -->
 </body>
 </html>
