@@ -97,10 +97,12 @@
       descriptionElement.style.opacity = '1';
     }
 
-    setTimeout(() => {
-      typeOutText(paragraphTextElement, paragraphText, paragraphIndex);
+    function startTyping() {
+      typeOutText(paragraphTextElement, paragraphText, 0);
       fadeInDescription();
-    }, 0);
+    }
+
+    setTimeout(startTyping, 0);
   </script>
 </body>
 </html>
