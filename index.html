@@ -54,10 +54,7 @@
 
   <div class="description">
     <div class="text-container">
-      <p id="paragraph1-text"></p>
-      <p id="paragraph2-text"></p>
-      <p id="paragraph3-text"></p>
-      <p id="paragraph4-text"></p>
+      <p id="paragraph-text"></p>
     </div>
   </div>
 
@@ -81,21 +78,9 @@
   <!-- End Viral Loops Waiting List Email Collection -->
 
   <script>
-    const paragraph1TextElement = document.getElementById('paragraph1-text');
-    const paragraph1Text = "Isaaq is a platform that helps you create a personalized digital autobiography through context-aware questions, powered by AI. Connect with your loved ones and future generations by sharing your unique story.";
-    let paragraph1Index = 0;
-
-    const paragraph2TextElement = document.getElementById('paragraph2-text');
-    const paragraph2Text = "At Isaaq, we believe that every person has a story worth sharing, a legacy that deserves to be preserved and cherished. Our mission is to empower you to capture and immortalize your life's journey through a personalized digital autobiography.";
-    let paragraph2Index = 0;
-
-    const paragraph3TextElement = document.getElementById('paragraph3-text');
-    const paragraph3Text = "With Isaaq's AI-driven platform, we guide you on a transformative storytelling experience. Our context-aware questions delve deep into your memories, eliciting profound insights and capturing the essence of your experiences.";
-    let paragraph3Index = 0;
-
-    const paragraph4TextElement = document.getElementById('paragraph4-text');
-    const paragraph4Text = "By creating a digital autobiography, you unlock the power to connect with your loved ones, sharing the wisdom, laughter, and lessons learned along the way. Your unique story becomes a beacon of inspiration, weaving together generations and forging lasting bonds.";
-    let paragraph4Index = 0;
+    const paragraphTextElement = document.getElementById('paragraph-text');
+    const paragraphText = "Isaaq is a platform that helps you create a personalized digital autobiography through context-aware questions, powered by AI. Connect with your loved ones and future generations by sharing your unique story.";
+    let paragraphIndex = 0;
 
     function typeOutText(textElement, text, index) {
       if (index < text.length) {
@@ -113,17 +98,8 @@
     }
 
     setTimeout(() => {
-      typeOutText(paragraph1TextElement, paragraph1Text, paragraph1Index);
-      setTimeout(() => {
-        typeOutText(paragraph2TextElement, paragraph2Text, paragraph2Index);
-        setTimeout(() => {
-          typeOutText(paragraph3TextElement, paragraph3Text, paragraph3Index);
-          setTimeout(() => {
-            typeOutText(paragraph4TextElement, paragraph4Text, paragraph4Index);
-            fadeInDescription();
-          }, 500);
-        }, 500);
-      }, 500);
+      typeOutText(paragraphTextElement, paragraphText, paragraphIndex);
+      fadeInDescription();
     }, 0);
   </script>
 </body>
