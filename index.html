@@ -23,7 +23,6 @@
     .typing-container {
       font-size: 24px;
       margin-bottom: 20px;
-      font-weight: bold;
       white-space: nowrap;
     }
 
@@ -37,6 +36,11 @@
       animation: fadeIn 1s ease-in-out;
       animation-delay: 1s;
       animation-fill-mode: forwards;
+    }
+
+    .text-container {
+      position: relative;
+      top: 0;
     }
 
     @keyframes typing {
@@ -54,14 +58,16 @@
 </head>
 <body>
   <h1 class="typing-container">
-    <span style="font-weight: bold; white-space: nowrap;">Call me Isaaq</span>
+    Call me <span style="font-weight: bold;">Isaaq</span>
   </h1>
 
   <div class="description">
-    <p id="paragraph1-text"></p>
-    <p id="paragraph2-text"></p>
-    <p id="paragraph3-text"></p>
-    <p id="paragraph4-text"></p>
+    <div class="text-container">
+      <p id="paragraph1-text"></p>
+      <p id="paragraph2-text"></p>
+      <p id="paragraph3-text"></p>
+      <p id="paragraph4-text"></p>
+    </div>
   </div>
 
   <!-- Viral Loops Waiting List Email Collection -->
