@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta charset="UTF-8">
   <title>Call me Isaaq</title>
   <style>
@@ -14,19 +13,16 @@
       padding: 0;
       display: flex;
       flex-direction: column;
-      align-items: center;
+      align-items: flex-start;
       justify-content: center;
-      height: 100vh;
-      text-align: center;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
+      min-height: 100vh;
+      text-align: left;
+      padding-left: 20px;
     }
 
     .typing-container {
       font-size: 24px;
       margin-bottom: 20px;
-      white-space: pre-wrap;
       font-weight: bold;
     }
 
@@ -38,7 +34,7 @@
       opacity: 0;
       transition: opacity 1s ease-in-out;
       animation: fadeIn 1s ease-in-out;
-      animation-delay: 6s;
+      animation-delay: 2s;
       animation-fill-mode: forwards;
     }
 
@@ -57,7 +53,7 @@
 </head>
 <body>
   <h1 class="typing-container">
-    <span id="heading-text"></span>
+    <span style="font-weight: bold">Call me </span>Isaaq
   </h1>
 
   <div class="description">
@@ -65,10 +61,7 @@
     <p id="paragraph2-text"></p>
     <p id="paragraph3-text"></p>
     <p id="paragraph4-text"></p>
-    <!-- Viral Loops Waiting List Signup Buttons -->
-    <form-widget mode="popup" ucid="S2E75XrONVmKbLs82Wb5szIdcRs"></form-widget>
   </div>
-  
 
   <!-- Viral Loops Waiting List Email Collection -->
   <script type="text/javascript" src="https://app.viral-loops.com/widgetsV2/core/loader.js"></script>
@@ -90,8 +83,8 @@
   <!-- End Viral Loops Waiting List Email Collection -->
 
   <script>
-    const headingTextElement = document.getElementById('heading-text');
-    const headingText = "Call me \nIsaaq";
+    const headingTextElement = document.querySelector('.typing-container');
+    const headingText = "Call me Isaaq";
     let headingIndex = 0;
 
     const paragraph1TextElement = document.getElementById('paragraph1-text');
@@ -111,53 +104,36 @@
     let paragraph4Index = 0;
 
     function typeOutText(textElement, text, index) {
-  if (index < text.length) {
-    setTimeout(() => {
-      textElement.textContent += text[index];
-      index++;
-      typeOutText(textElement, text, index);
-    }, Math.random() * 100 + 50); // Randomize the typing speed
-  }
-}
+      if (index < text.length) {
+        textElement.textContent += text[index];
+        index++;
+        setTimeout(() => {
+          typeOutText(textElement, text, index);
+        }, 50);
+      }
+    }
 
     function fadeInDescription() {
       const descriptionElement = document.querySelector('.description');
       descriptionElement.style.opacity = '1';
     }
 
-    typeOutText(headingTextElement, headingText, headingIndex);
     setTimeout(() => {
-      typeOutText(paragraph1TextElement, paragraph1Text, paragraph1Index);
+      typeOutText(headingTextElement, headingText, headingIndex);
       setTimeout(() => {
-        typeOutText(paragraph2TextElement, paragraph2Text, paragraph2Index);
+        typeOutText(paragraph1TextElement, paragraph1Text, paragraph1Index);
         setTimeout(() => {
-          typeOutText(paragraph3TextElement, paragraph3Text, paragraph3Index);
+          typeOutText(paragraph2TextElement, paragraph2Text, paragraph2Index);
           setTimeout(() => {
-            typeOutText(paragraph4TextElement, paragraph4Text, paragraph4Index);
-            fadeInDescription();
-          }, 5);
-        }, paragraph2Text.length * 50);
-      }, paragraph1Text.length * 50);
-    }, headingText.length * 50);
+            typeOutText(paragraph3TextElement, paragraph3Text, paragraph3Index);
+            setTimeout(() => {
+              typeOutText(paragraph4TextElement, paragraph4Text, paragraph4Index);
+              fadeInDescription();
+            }, 2000);
+          }, paragraph2Text.length * 50);
+        }, paragraph1Text.length * 50);
+      }, headingText.length * 50);
+    }, 0);
   </script>
-  <!-- Viral Loops Waiting List Email Collection -->
-<script type="text/javascript" src="https://app.viral-loops.com/widgetsV2/core/loader.js"></script>
-<script>
-  (function(w, d, s, o, f, js, fjs) {
-    w[o] = w[o] || function() { (w[o].q = w[o].q || []).push(arguments); };
-    js = d.createElement(s), fjs = d.getElementsByTagName(s)[0];
-    js.id = o;
-    js.src = f;
-    js.async = 1;
-    fjs.parentNode.insertBefore(js, fjs);
-  })(window, document, 'script', 'vrlps-chrome-jssdk', 'https://app.viral-loops.com/widgetsV2/chrome/vrlps-chrome.js');
-
-  window.vrlps = {
-    api_key: 'jjqkDXlEwT8bdreDNRmUIFeNID8',
-    campaign_uuid: 'S2E75XrONVmKbLs82Wb5szIdcRs'
-  };
-</script>
-<!-- End Viral Loops Waiting List Email Collection -->
-
 </body>
 </html>
