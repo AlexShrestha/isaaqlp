@@ -13,10 +13,17 @@
       padding: 0;
       display: flex;
       flex-direction: column;
-      align-items: center;
+      align-items: flex-start;
       justify-content: center;
       min-height: 100vh;
       text-align: left;
+      padding-left: 20px;
+    }
+
+    .typing-container {
+      font-size: 24px;
+      margin-bottom: 20px;
+      font-weight: bold;
     }
 
     .description {
@@ -27,15 +34,14 @@
       opacity: 0;
       transition: opacity 1s ease-in-out;
       animation: fadeIn 1s ease-in-out;
-      animation-delay: 1s;
+      animation-delay: 2s;
       animation-fill-mode: forwards;
     }
 
-    .text-container {
-      position: relative;
-      top: 0;
-      display: inline-block;
-      text-align: left;
+    @keyframes typing {
+      from {
+        width: 0;
+      }
     }
 
     @keyframes fadeIn {
@@ -46,29 +52,60 @@
   </style>
 </head>
 <body>
-  <div style="text-align: center;">
-    <h1>
-      Call me <span style="font-weight: bold;">Isaaq</span>
-    </h1>
-  </div>
+  <h1 class="typing-container">
+    <span style="font-weight: bold">Call me </span>Isaaq
+  </h1>
 
   <div class="description">
-    <div class="text-container">
-      <p id="text-block"></p>
-    </div>
+    <p id="paragraph1-text"></p>
+    <p id="paragraph2-text"></p>
+    <p id="paragraph3-text"></p>
+    <p id="paragraph4-text"></p>
   </div>
 
+  <!-- Viral Loops Waiting List Email Collection -->
+  <script type="text/javascript" src="https://app.viral-loops.com/widgetsV2/core/loader.js"></script>
   <script>
-    const textBlockElement = document.getElementById('text-block');
-    const text = `Isaaq is an AI biographer that helps you create a personalized digital autobiography, allowing you to share the true story of you with your loved ones.<br><br>
-        At Isaaq, we believe that every person's life journey is unique and worth preserving. Our platform leverages AI technology to guide you through the process of creating a meaningful digital autobiography.<br><br>
-        By answering context-aware questions, you'll uncover deep insights, significant memories, and valuable experiences that shape who you are.<br><br>
-        Share your digital autobiography with your loved ones and future generations, fostering deeper connections and leaving a lasting legacy.`;
-    let textIndex = 0;
+    (function(w, d, s, o, f, js, fjs) {
+      w[o] = w[o] || function() { (w[o].q = w[o].q || []).push(arguments); };
+      js = d.createElement(s), fjs = d.getElementsByTagName(s)[0];
+      js.id = o;
+      js.src = f;
+      js.async = 1;
+      fjs.parentNode.insertBefore(js, fjs);
+    })(window, document, 'script', 'vrlps-chrome-jssdk', 'https://app.viral-loops.com/widgetsV2/chrome/vrlps-chrome.js');
+
+    window.vrlps = {
+      api_key: 'jjqkDXlEwT8bdreDNRmUIFeNID8',
+      campaign_uuid: 'S2E75XrONVmKbLs82Wb5szIdcRs'
+    };
+  </script>
+  <!-- End Viral Loops Waiting List Email Collection -->
+
+  <script>
+    const headingTextElement = document.querySelector('.typing-container');
+    const headingText = "Call me Isaaq";
+    let headingIndex = 0;
+
+    const paragraph1TextElement = document.getElementById('paragraph1-text');
+    const paragraph1Text = "Isaaq is a platform that helps you create a personalized digital autobiography through context-aware questions, powered by AI. Connect with your loved ones and future generations by sharing your unique story.";
+    let paragraph1Index = 0;
+
+    const paragraph2TextElement = document.getElementById('paragraph2-text');
+    const paragraph2Text = "At Isaaq, we believe that every person has a story worth sharing, a legacy that deserves to be preserved and cherished. Our mission is to empower you to capture and immortalize your life's journey through a personalized digital autobiography.";
+    let paragraph2Index = 0;
+
+    const paragraph3TextElement = document.getElementById('paragraph3-text');
+    const paragraph3Text = "With Isaaq's AI-driven platform, we guide you on a transformative storytelling experience. Our context-aware questions delve deep into your memories, eliciting profound insights and capturing the essence of your experiences.";
+    let paragraph3Index = 0;
+
+    const paragraph4TextElement = document.getElementById('paragraph4-text');
+    const paragraph4Text = "By creating a digital autobiography, you unlock the power to connect with your loved ones, sharing the wisdom, laughter, and lessons learned along the way. Your unique story becomes a beacon of inspiration, weaving together generations and forging lasting bonds.";
+    let paragraph4Index = 0;
 
     function typeOutText(textElement, text, index) {
       if (index < text.length) {
-        textElement.innerHTML += text[index];
+        textElement.textContent += text[index];
         index++;
         setTimeout(() => {
           typeOutText(textElement, text, index);
@@ -82,28 +119,21 @@
     }
 
     setTimeout(() => {
-      typeOutText(textBlockElement, text, textIndex);
-      fadeInDescription();
-    }, 1000);
+      typeOutText(headingTextElement, headingText, headingIndex);
+      setTimeout(() => {
+        typeOutText(paragraph1TextElement, paragraph1Text, paragraph1Index);
+        setTimeout(() => {
+          typeOutText(paragraph2TextElement, paragraph2Text, paragraph2Index);
+          setTimeout(() => {
+            typeOutText(paragraph3TextElement, paragraph3Text, paragraph3Index);
+            setTimeout(() => {
+              typeOutText(paragraph4TextElement, paragraph4Text, paragraph4Index);
+              fadeInDescription();
+            }, 2000);
+          }, paragraph2Text.length * 50);
+        }, paragraph1Text.length * 50);
+      }, headingText.length * 50);
+    }, 0);
   </script>
-  <!-- Viral Loops Waiting List Email Collection -->
-<script type="text/javascript" src="https://app.viral-loops.com/widgetsV2/core/loader.js"></script>
-<script>
-  (function(w, d, s, o, f, js, fjs) {
-    w[o] = w[o] || function() { (w[o].q = w[o].q || []).push(arguments); };
-    js = d.createElement(s), fjs = d.getElementsByTagName(s)[0];
-    js.id = o;
-    js.src = f;
-    js.async = 1;
-    fjs.parentNode.insertBefore(js, fjs);
-  })(window, document, 'script', 'vrlps-chrome-jssdk', 'https://app.viral-loops.com/widgetsV2/chrome/vrlps-chrome.js');
-
-  window.vrlps = {
-    api_key: 'jjqkDXlEwT8bdreDNRmUIFeNID8',
-    campaign_uuid: 'S2E75XrONVmKbLs82Wb5szIdcRs'
-  };
-</script>
-<!-- End Viral Loops Waiting List Email Collection -->
-
 </body>
 </html>
