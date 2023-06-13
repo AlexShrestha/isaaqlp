@@ -13,17 +13,10 @@
       padding: 0;
       display: flex;
       flex-direction: column;
-      align-items: flex-start;
+      align-items: center;
       justify-content: center;
       min-height: 100vh;
       text-align: left;
-      padding-left: 20px;
-    }
-
-    .typing-container {
-      font-size: 24px;
-      margin-bottom: 20px;
-      font-weight: bold;
     }
 
     .description {
@@ -34,14 +27,15 @@
       opacity: 0;
       transition: opacity 1s ease-in-out;
       animation: fadeIn 1s ease-in-out;
-      animation-delay: 2s;
+      animation-delay: 1s;
       animation-fill-mode: forwards;
     }
 
-    @keyframes typing {
-      from {
-        width: 0;
-      }
+    .text-container {
+      position: relative;
+      top: 0;
+      display: inline-block;
+      text-align: left;
     }
 
     @keyframes fadeIn {
@@ -52,19 +46,21 @@
   </style>
 </head>
 <body>
-  <h1 class="typing-container">
-    <span style="font-weight: bold">Call me </span>Isaaq
-  </h1>
+  <div style="text-align: center;">
+    <h1>
+      I'm <span style="font-weight: bold;">Isaaq</span>
+    </h1>
+  </div>
 
   <div class="description">
-    <p id="paragraph1-text"></p>
-    <p id="paragraph2-text"></p>
-    <p id="paragraph3-text"></p>
-    <p id="paragraph4-text"></p>
+    <div class="text-container">
+      <p id="text-block"></p>
+    </div>
   </div>
 
   <!-- Viral Loops Waiting List Email Collection -->
   <script type="text/javascript" src="https://app.viral-loops.com/widgetsV2/core/loader.js"></script>
+  <div id="viral-loops-widget"></div>
   <script>
     (function(w, d, s, o, f, js, fjs) {
       w[o] = w[o] || function() { (w[o].q = w[o].q || []).push(arguments); };
@@ -79,33 +75,34 @@
       api_key: 'jjqkDXlEwT8bdreDNRmUIFeNID8',
       campaign_uuid: 'S2E75XrONVmKbLs82Wb5szIdcRs'
     };
+
+    // Render Viral Loops widget
+    window.addEventListener('DOMContentLoaded', function() {
+      var viralLoopsWidgetContainer = document.getElementById('viral-loops-widget');
+      if (viralLoopsWidgetContainer) {
+        viralLoopsWidgetContainer.innerHTML = '<form-widget ucid="S2E75XrONVmKbLs82Wb5szIdcRs"></form-widget>';
+      }
+    });
   </script>
   <!-- End Viral Loops Waiting List Email Collection -->
 
+
   <script>
-    const headingTextElement = document.querySelector('.typing-container');
-    const headingText = "Call me Isaaq";
-    let headingIndex = 0;
+    const textBlockElement = document.getElementById('text-block');
+    const text = `Hey there! I'm Isaaq, your personal AI biographer. I'm here to help you share the incredible story of your life with your loved ones. Think of me as your personal storyteller, keeping your memories alive for your children and grandchildren.
 
-    const paragraph1TextElement = document.getElementById('paragraph1-text');
-    const paragraph1Text = "Isaaq is a platform that helps you create a personalized digital autobiography through context-aware questions, powered by AI. Connect with your loved ones and future generations by sharing your unique story.";
-    let paragraph1Index = 0;
+No filters, no formalities, just your unique story. I'll be your companion in capturing those special moments, the laughter, the tears, and everything in between. Together, we'll create a legacy that truly represents who you are.
 
-    const paragraph2TextElement = document.getElementById('paragraph2-text');
-    const paragraph2Text = "At Isaaq, we believe that every person has a story worth sharing, a legacy that deserves to be preserved and cherished. Our mission is to empower you to capture and immortalize your life's journey through a personalized digital autobiography.";
-    let paragraph2Index = 0;
+When you're ready, invite your family to join the journey. Give them a front-row seat to your thoughts, experiences, and dreams. It's like handing them a key to unlock a treasure trove of memories and emotions, whenever they're ready to explore.
 
-    const paragraph3TextElement = document.getElementById('paragraph3-text');
-    const paragraph3Text = "With Isaaq's AI-driven platform, we guide you on a transformative storytelling experience. Our context-aware questions delve deep into your memories, eliciting profound insights and capturing the essence of your experiences.";
-    let paragraph3Index = 0;
+Your story is a gift that connects generations. By entrusting me, Isaaq, with your stories, you're creating a bridge that spans time and brings your family closer together. It's a chance to let your children and grandchildren truly understand you and the world you've lived in.
 
-    const paragraph4TextElement = document.getElementById('paragraph4-text');
-    const paragraph4Text = "By creating a digital autobiography, you unlock the power to connect with your loved ones, sharing the wisdom, laughter, and lessons learned along the way. Your unique story becomes a beacon of inspiration, weaving together generations and forging lasting bonds.";
-    let paragraph4Index = 0;
+So, let's embark on this amazing adventure together. I'm here to help you preserve your personal history, so your legacy can shine bright for years to come. Let's capture your story and create a lasting bond between you and your future generations.`;
+    let textIndex = 0;
 
     function typeOutText(textElement, text, index) {
       if (index < text.length) {
-        textElement.textContent += text[index];
+        textElement.innerHTML += text[index];
         index++;
         setTimeout(() => {
           typeOutText(textElement, text, index);
@@ -119,21 +116,9 @@
     }
 
     setTimeout(() => {
-      typeOutText(headingTextElement, headingText, headingIndex);
-      setTimeout(() => {
-        typeOutText(paragraph1TextElement, paragraph1Text, paragraph1Index);
-        setTimeout(() => {
-          typeOutText(paragraph2TextElement, paragraph2Text, paragraph2Index);
-          setTimeout(() => {
-            typeOutText(paragraph3TextElement, paragraph3Text, paragraph3Index);
-            setTimeout(() => {
-              typeOutText(paragraph4TextElement, paragraph4Text, paragraph4Index);
-              fadeInDescription();
-            }, 2000);
-          }, paragraph2Text.length * 50);
-        }, paragraph1Text.length * 50);
-      }, headingText.length * 50);
-    }, 0);
+      typeOutText(textBlockElement, text, textIndex);
+      fadeInDescription();
+    }, 1000);
   </script>
 </body>
 </html>
